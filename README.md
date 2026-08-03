@@ -1,5 +1,7 @@
 ## Hi ,I'm Kyrylo ✨
 
+![GitHub Metrics](./github-metrics.svg)
+
 👨‍💻🧠**Frontend Developer** building clean, responsive, and user-friendly web applications.
 * 🎯 **Mindset:** Always aiming to write structured, maintainable code and create intuitive user interfaces.
 * 🌱 **Currently:** Deepening my knowledge in frontend architecture and modern web standards.
