@@ -1,0 +1,45 @@
+name: Metrics
+on:
+  # Automatisch jeden Tag um 00:00 Uhr ausführen
+  schedule: [{cron: "0 0 * * *"}]
+  # Erlaubt das manuelle Starten über den Actions-Tab
+  workflow_dispatch:
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          # Dein hinterlegter Token
+          token: ${{ secrets.METRICS_TOKEN }}
+          
+          # Speicherort der generierten SVG-Datei
+          filename: github-metrics.svg
+          
+          # Basis-Einstellungen
+          base: header, activity, community, repositories
+          config_timezone: Europe/Berlin
+          
+          # PLUGIN 1: 3D Isometric Calendar
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+          
+          # PLUGIN 2: Detaillierte Sprachen-Statistik
+          plugin_languages: yes
+          plugin_languages_analysis_timeout: 15
+          plugin_languages_categories: markup, programming
+          plugin_languages_colors: github
+          plugin_languages_limit: 8
+          plugin_languages_recent_categories: markup, programming
+          plugin_languages_recent_load: 300
+          plugin_languages_sections: most-used
+          plugin_languages_threshold: 0%
+          
+          # PLUGIN 3: Programmier-Gewohnheiten (Zeiten)
+          plugin_habits: yes
+          plugin_habits_from: 200
+          plugin_habits_days: 14
+          plugin_habits_facts: yes
+          plugin_habits_charts: yes
