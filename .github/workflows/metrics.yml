@@ -37,9 +37,4 @@ jobs:
           plugin_languages_sections: most-used
           plugin_languages_threshold: 0%
           
-          # PLUGIN 3: Programmier-Gewohnheiten (Zeiten)
-          plugin_habits: yes
-          plugin_habits_from: 200
-          plugin_habits_days: 14
-          plugin_habits_facts: yes
-          plugin_habits_charts: yes
+          
