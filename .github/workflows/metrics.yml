@@ -1,8 +1,6 @@
 name: Metrics
 on:
-  # Automatisch jeden Tag um 00:00 Uhr ausführen
   schedule: [{cron: "0 0 * * *"}]
-  # Erlaubt das manuelle Starten über den Actions-Tab
   workflow_dispatch:
 jobs:
   github-metrics:
@@ -12,14 +10,11 @@ jobs:
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          # Dein hinterlegter Token
           token: ${{ secrets.METRICS_TOKEN }}
-          
-          # Speicherort der generierten SVG-Datei
           filename: github-metrics.svg
           
-          # Basis-Einstellungen
-          base: header
+          # Hier zwingen wir die Action, NUR den Header zu nehmen:
+          base: "header"
           config_timezone: Europe/Berlin
           
           # PLUGIN 1: 3D Isometric Calendar
@@ -36,5 +31,3 @@ jobs:
           plugin_languages_recent_load: 300
           plugin_languages_sections: most-used
           plugin_languages_threshold: 0%
-          
-          
