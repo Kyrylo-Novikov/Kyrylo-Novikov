@@ -19,7 +19,7 @@ jobs:
           filename: github-metrics.svg
           
           # Basis-Einstellungen
-          base: header, activity, repositories
+          base: header
           config_timezone: Europe/Berlin
           
           # PLUGIN 1: 3D Isometric Calendar
